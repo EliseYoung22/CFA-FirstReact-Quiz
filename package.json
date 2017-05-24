@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bulma": "^0.4.1",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-circular-progressbar": "^0.1.4",
+    "react-dom": "^15.5.4",
+    "react-materialize": "^0.18.4",
+    "styled-components": "^1.4.6"
   },
   "devDependencies": {
-    "react-scripts": "0.9.5"
+    "enzyme": "^2.8.2",
+    "react-scripts": "0.9.5",
+    "react-test-renderer": "^15.5.4"
   },
   "scripts": {
     "start": "react-scripts start",

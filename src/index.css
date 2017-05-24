@@ -1,8 +1,7 @@
-@import '../node_modules/bulma/css/bulma.css';
 
 body {
   text-align: center;
-  background: #7FF2E0;
+  /*background: #7FF2E0;*/
   margin: 0;
   padding: 100px;
   font-family: sans-serif;

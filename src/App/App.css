@@ -28,3 +28,30 @@
   font-family: cursive;
   border: 1px dotted orange;
 }
+
+CircularProgressbar {
+  /*
+   * This fixes an issue where the CircularProgressbar svg has
+   * 0 width inside a "display: flex" container, and thus not visible.
+   *
+   * If you're not using "display: flex", you can remove this style.
+   */
+  width: 50%;
+}
+
+.CircularProgressbar .CircularProgressbar-path {
+  stroke: #F7484E;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.CircularProgressbar .CircularProgressbar-trail {
+  stroke: #d6d6d6;
+}
+
+.CircularProgressbar .CircularProgressbar-text {
+  fill: #F7484E;
+  font-size: 20px;
+  dominant-baseline: middle;
+  text-anchor: middle;
+}

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import Question from '../Question/Question';
-import ProgressBar from '../ProgressBar/ProgressBar';
+// import ProgressBar from '../ProgressBar/ProgressBar';
 import MultiChoice from '../MultiChoice/MultiChoice';
 import Results from '../Results/Results';
+import CircularProgressbar from 'react-circular-progressbar';
+// import {Card, Button, Col, Row} from 'react-materialize';
 
 class App extends Component {
   constructor (props) {
@@ -61,15 +63,16 @@ class App extends Component {
     })
   }
 
+
   render() {
     return (
-      <div className="column is-6 is-offset-7">
-        <h2 className="quiz-title button">Quiz App</h2>
+      <div>
+        <h2 className="quiz-title">Quiz App</h2>
+        <CircularProgressbar percentage={this.state.progress / this.quiz_data.length * 100}  />
 
         {this.state.progress < this.quiz_data.length ? (
           <div>
-            <Question current_question={this.quiz_data[this.state.progress].question} />
-            <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} />
+            <Question current_question={this.quiz_data[this.state.progress].question}/>
             <MultiChoice
               answers={this.quiz_data[this.state.progress].possible_answers}
               updateSelected={this.updateSelected}
@@ -78,7 +81,8 @@ class App extends Component {
           </div>
         )
         : (
-        <Results score={this.state.score} end_message="Congratulations, you have finished!"
+        <Results score={this.state.score}
+          end_message="Congratulations, you have finished!"
           handleRestart={()=> this.restartQuiz()}/>
          )}
       </div>
